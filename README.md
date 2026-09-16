@@ -36,3 +36,24 @@ LIMIT 10;
 | Victor    | Stevens     | 42.62      |
 
 **Insight:** Spending among the top 10 customers is fair and evenly distributed (ranging from $42.62–$49.62), suggesting no single customer dominates revenue, the business has a healthy base of repeat high-value customers rather than reliance on one or two big spenders.
+
+### Q2: What is total revenue by country?
+
+```sql
+SELECT BillingCountry, SUM(Total) as TotalRevenue
+FROM invoices
+GROUP BY BillingCountry
+ORDER BY TotalRevenue DESC;
+```
+
+**Result:**
+| Country | TotalRevenue |
+|---|---|
+| USA | 523.06 |
+| Canada | 303.96 |
+| France | 195.10 |
+| Brazil | 190.10 |
+| Germany | 156.48 |
+| United Kingdom | 112.86 |
+
+**Insight:** The USA generates significantly more revenue than any other country (72% more than Canada), and together the top 5 countries account for the large majority of total revenue, the business is heavily reliant on a small number of core markets rather than being evenly spread globally.
