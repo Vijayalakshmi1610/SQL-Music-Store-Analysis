@@ -4,6 +4,9 @@
 
 Analyzing a digital music store's sales data using SQL to answer real business questions.
 
+## Summary
+This project analyzes the Chinook digital music store database using SQL to answer 6 business questions, covering customer value, geographic revenue, genre performance, revenue trends, regional customer ranking, and churn risk. Techniques used: joins, aggregation, window functions (RANK), and CTEs.
+
 ## Tools
 - SQLite (Chinook sample database)
 - DB Browser for SQLite
@@ -153,4 +156,10 @@ ORDER BY lp.LastPurchaseDate;
 | ... | ... | ... |
 | Astrid | Gruber | 2013-06-19 |
 
-**Insight:** 28 customers (roughly half the customer base) haven't purchased in 6+ months relative to the dataset's last invoice date. This CTE approach — first finding each customer's last purchase date, then filtering against a rolling cutoff — is a reusable pattern for churn/retention analysis and could be automated into a recurring report to flag at-risk customers for a win-back campaign.
+**Insight:** 28 customers (roughly half the customer base) haven't purchased in 6+ months relative to the dataset's last invoice date. This CTE approach, first finding each customer's last purchase date, then filtering against a rolling cutoff is a reusable pattern for churn/retention analysis and could be automated into a recurring report to flag at-risk customers for a win-back campaign.
+
+## Key Takeaways
+- Revenue is concentrated in the USA and a handful of top countries
+- Rock, Latin, and Metal genres drive the majority of revenue
+- Customer spend is fairly evenly distributed at the top, rather than dominated by one whale customer
+- 50% of customers show signs of churn risk (no purchase in 6+ months) a strong candidate for a retention campaign
